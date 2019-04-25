@@ -81,15 +81,6 @@ GraphSearchDjikstra.prototype.canIMakeIt = function(graph, pathOut, pathBack, da
 		// print "you should get there just fine"
 		return ["True", Math.round(hoursDrivingOut)];
 	}
-
-	for (var i = 1; i < pathBack.length; i++){
-		totalCostArray.push(graph.getEdge(pathBack[i-1],pathBack[i]).getEdgeCost());
-		totalCost = totalCost + (graph.getEdge(pathBack[i-1],pathBack[i]).getEdgeCost());
-	}
-
-
-
-	return [totalCostArray, totalCost];
 }
 
 module.exports = GraphSearchDjikstra;

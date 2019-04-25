@@ -21,29 +21,35 @@ var GraphSearchDjikstra = require("./GraphSearchDjikstra.js");
 search = new GraphSearchDjikstra();
 //
 // this line will give the path starting from Nashville (19) to Madison (1)
-//
 searchOut = search.execute(graph,19,1);
+// this line gives the return path
 searchBack = search.execute(graph,1,19);
 //
 pathToOut = searchOut.getPathToTarget();
 pathToBack = searchBack.getPathToTarget();
 pathReadable = [];
 
+// creates the readable path for the first half
 pathToOut.forEach(function(nodeIndex)
 {
 	pathReadable.push((" "+graph.getNode(nodeIndex).label));
 })
-pathReadable.pop();
+
+// just so the end node on the first half isn't repeated
+if (pathReadable[pathReadable.length-1] == (" "+graph.getNode(pathToBack[0]).label)) {
+	pathReadable.pop();
+}
+
+// creates the readable path for the second half
 pathToBack.forEach(function(nodeIndex)
 {
-	//pathToBackReadable.push(graph.getNode(nodeIndex).label);
 	pathReadable.push((" "+graph.getNode(nodeIndex).label));
 })
 
 //
 // these will be user entered constraints
 //
-var daysOfTrip = 3;
+var daysOfTrip = 4;
 var hoursDriving = 8;
 
 var drivingSpeed = 70; // this can either be arbitrary or user can adjust it idk
