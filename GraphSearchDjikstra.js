@@ -1,4 +1,3 @@
-
 var _ = require("underscore");
 var GraphEdge = require("./GraphEdge.js");
 var DjikstraSearchResult = require("./DjikstraSearchResult.js");
@@ -56,6 +55,41 @@ console.dir(searchFrontier);
 		target: targetIndex,
 		searchFrontier: searchFrontier
 	});
+}
+
+GraphSearchDjikstra.prototype.canIMakeIt = function(graph, pathOut, pathBack, daysOfTrip, hoursDriving, speed){
+	var totalCost = 0;
+	var totalCostArray = [];
+
+	var daysOut = daysOfTrip/2;
+	var hoursDrivingOut = daysOut*hoursDriving;
+
+	var daysBack = daysOfTrip/2;
+	var hoursDrivingBack = daysBack*hoursDriving;
+
+	for (var i = 1; i < pathOut.length; i++){
+		totalCostArray.push(graph.getEdge(pathOut[i-1],pathOut[i]).getEdgeCost());
+		totalCost = totalCost + (graph.getEdge(pathOut[i-1],pathOut[i]).getEdgeCost());
+	}
+
+	var hoursNeededDrivingOut = totalCost/speed;
+	if (hoursDrivingOut < hoursNeededDrivingOut) {
+		// print "we suggest at least (hoursNeededDrivingOut) hours to get there"
+		return ["False", Math.round(hoursNeededDrivingOut), daysOfTrip];
+	}
+	else {
+		// print "you should get there just fine"
+		return ["True", Math.round(hoursDrivingOut)];
+	}
+
+	for (var i = 1; i < pathBack.length; i++){
+		totalCostArray.push(graph.getEdge(pathBack[i-1],pathBack[i]).getEdgeCost());
+		totalCost = totalCost + (graph.getEdge(pathBack[i-1],pathBack[i]).getEdgeCost());
+	}
+
+
+
+	return [totalCostArray, totalCost];
 }
 
 module.exports = GraphSearchDjikstra;

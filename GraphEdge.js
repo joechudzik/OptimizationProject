@@ -7,4 +7,8 @@ var GraphEdge = function(from,to,cost)
 	this.cost = cost || 1;
 }
 
+GraphEdge.prototype.getEdgeCost = function(){
+	return this.cost;
+}
+
 module.exports = GraphEdge;
