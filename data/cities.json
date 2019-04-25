@@ -1,0 +1,958 @@
+{
+	"nodes": [
+		"Milwaukee",
+		"Madison",
+		"Chicago",
+		"South Bend",
+		"Detroit",
+		"Toledo",
+		"Columbus",
+		"Pittsburgh",
+		"Niagara Falls",
+		"Boston",
+		"New York",
+		"Atlantic City",
+		"Baltimore",
+		"Charleston",
+		"Jacksonville",
+		"Orlando",
+		"Miami",
+		"Tampa",
+		"Atlanta",
+		"Nashville",
+		"Louisville",
+		"Cincinnati",
+		"Indianapolis",
+		"St. Louis",
+		"Memphis",
+		"New Orleans",
+		"Houston",
+		"Austin",
+		"El Paso",
+		"Tucson",
+		"San Diego",
+		"Los Angeles",
+		"San Jose",
+		"San Francisco",
+		"Sacramento",
+		"Portland",
+		"Seattle",
+		"Anchorage",
+		"Las Vegas",
+		"Salt Lake City",
+		"Phoenix",
+		"Denver",
+		"Albuquerque",
+		"Kansas City",
+		"Omaha",
+		"Des Moines",
+		"Iowa City",
+		"Minneapolis",
+		"Mount Rushmore",
+		"Yellowstone",
+		"Oklahoma City",
+		"Grand Canyon"
+	],
+	"edges": [
+		{
+			"from": "Milwaukee",
+			"to": "Madison",
+			"cost": 121
+		},
+		{
+			"from": "Milwaukee",
+			"to": "Chicago",
+			"cost": 131
+		},
+		{
+			"from": "Madison",
+			"to": "Milwaukee",
+			"cost": 121
+		},
+		{
+			"from": "Madison",
+			"to": "Chicago",
+			"cost": 197
+		},
+		{
+			"from": "Madison",
+			"to": "Minneapolis",
+			"cost": 375
+		},
+		{
+			"from": "Chicago",
+			"to": "Milwaukee",
+			"cost": 131
+		},
+		{
+			"from": "Chicago",
+			"to": "Madison",
+			"cost": 197
+		},
+		{
+			"from": "Chicago",
+			"to": "Iowa City",
+			"cost": 324
+		},
+		{
+			"from": "Chicago",
+			"to": "St. Louis",
+			"cost": 422
+		},
+		{
+			"from": "Chicago",
+			"to": "South Bend",
+			"cost": 116
+		},
+		{
+			"from": "South Bend",
+			"to": "Chicago",
+			"cost": 116
+		},
+		{
+			"from": "South Bend",
+			"to": "Indianapolis",
+			"cost": 212
+		},
+		{
+			"from": "South Bend",
+			"to": "Detroit",
+			"cost": 275
+		},
+		{
+			"from": "South Bend",
+			"to": "Toledo",
+			"cost": 224
+		},
+		{
+			"from": "Detroit",
+			"to": "South Bend",
+			"cost": 275
+		},
+		{
+			"from": "Detroit",
+			"to": "Niagara Falls",
+			"cost": 338
+		},
+		{
+			"from": "Detroit",
+			"to": "Toledo",
+			"cost": 85
+		},
+		{
+			"from": "Toledo",
+			"to": "South Bend",
+			"cost": 224
+		},
+		{
+			"from": "Toledo",
+			"to": "Detroit",
+			"cost": 85
+		},
+		{
+			"from": "Toledo",
+			"to": "Columbus",
+			"cost": 195
+		},
+		{
+			"from": "Columbus",
+			"to": "Toledo",
+			"cost": 195
+		},
+		{
+			"from": "Columbus",
+			"to": "Cincinnati",
+			"cost": 161
+		},
+		{
+			"from": "Columbus",
+			"to": "Pittsburgh",
+			"cost": 260
+		},
+		{
+			"from": "Pittsburgh",
+			"to": "Columbus",
+			"cost": 261
+		},
+		{
+			"from": "Pittsburgh",
+			"to": "Baltimore",
+			"cost": 316
+		},
+		{
+			"from": "Pittsburgh",
+			"to": "Atlantic City",
+			"cost": 490
+		},
+		{
+			"from": "Pittsburgh",
+			"to": "New York",
+			"cost": 507
+		},
+		{
+			"from": "Niagara Falls",
+			"to": "Detroit",
+			"cost": 338
+		},
+		{
+			"from": "Niagara Falls",
+			"to": "Anchorage",
+			"cost": 4942
+		},
+		{
+			"from": "Niagara Falls",
+			"to": "Boston",
+			"cost": 657
+		},
+		{
+			"from": "Boston",
+			"to": "Niagara Falls",
+			"cost": 657
+		},
+		{
+			"from": "Boston",
+			"to": "New York",
+			"cost": 306
+		},
+		{
+			"from": "New York",
+			"to": "Pittsburgh",
+			"cost": 507
+		},
+		{
+			"from": "New York",
+			"to": "Boston",
+			"cost": 306
+		},
+		{
+			"from": "New York",
+			"to": "Atlantic City",
+			"cost": 154
+		},
+		{
+			"from": "Atlantic City",
+			"to": "New York",
+			"cost": 154
+		},
+		{
+			"from": "Atlantic City",
+			"to": "Pittsburgh",
+			"cost": 490
+		},
+		{
+			"from": "Atlantic City",
+			"to": "Baltimore",
+			"cost": 189
+		},
+		{
+			"from": "Baltimore",
+			"to": "Pittsburgh",
+			"cost": 316
+		},
+		{
+			"from": "Baltimore",
+			"to": "Atlantic City",
+			"cost": 189
+		},
+		{
+			"from": "Baltimore",
+			"to": "Charleston",
+			"cost": 783
+		},
+		{
+			"from": "Charleston",
+			"to": "Baltimore",
+			"cost": 783
+		},
+		{
+			"from": "Charleston",
+			"to": "Atlanta",
+			"cost": 428
+		},
+		{
+			"from": "Charleston",
+			"to": "Jacksonville",
+			"cost": 317
+		},
+		{
+			"from": "Jacksonville",
+			"to": "Charleston",
+			"cost": 317
+		},
+		{
+			"from": "Jacksonville",
+			"to": "Orlando",
+			"cost": 201
+		},
+		{
+			"from": "Orlando",
+			"to": "Jacksonville",
+			"cost": 201
+		},
+		{
+			"from": "Orlando",
+			"to": "Miami",
+			"cost": 330
+		},
+		{
+			"from": "Orlando",
+			"to": "Tampa",
+			"cost": 124
+		},
+		{
+			"from": "Orlando",
+			"to": "Atlanta",
+			"cost": 646
+		},
+		{
+			"from": "Miami",
+			"to": "Orlando",
+			"cost": 330
+		},
+		{
+			"from": "Miami",
+			"to": "Tampa",
+			"cost": 331
+		},
+		{
+			"from": "Tampa",
+			"to": "Miami",
+			"cost": 331
+		},
+		{
+			"from": "Tampa",
+			"to": "Orlando",
+			"cost": 124
+		},
+		{
+			"from": "Atlanta",
+			"to": "Charleston",
+			"cost": 428
+		},
+		{
+			"from": "Atlanta",
+			"to": "Orlando",
+			"cost": 646
+		},
+		{
+			"from": "Atlanta",
+			"to": "New Orleans",
+			"cost": 683
+		},
+		{
+			"from": "Atlanta",
+			"to": "Nashville",
+			"cost": 346
+		},
+		{
+			"from": "Nashville",
+			"to": "Atlanta",
+			"cost": 346
+		},
+		{
+			"from": "Nashville",
+			"to": "Memphis",
+			"cost": 316
+		},
+		{
+			"from": "Nashville",
+			"to": "Louisville",
+			"cost": 250
+		},
+		{
+			"from": "Nashville",
+			"to": "Indianapolis",
+			"cost": 405
+		},
+		{
+			"from": "Nashville",
+			"to": "Cincinnati",
+			"cost": 383
+		},
+		{
+			"from": "Louisville",
+			"to": "Nashville",
+			"cost": 250
+		},
+		{
+			"from": "Louisville",
+			"to": "Memphis",
+			"cost": 515
+		},
+		{
+			"from": "Louisville",
+			"to": "St. Louis",
+			"cost": 389
+		},
+		{
+			"from": "Louisville",
+			"to": "Indianapolis",
+			"cost": 172
+		},
+		{
+			"from": "Cincinnati",
+			"to": "Nashville",
+			"cost": 383
+		},
+		{
+			"from": "Cincinnati",
+			"to": "Indianapolis",
+			"cost": 160
+		},
+		{
+			"from": "Cincinnati",
+			"to": "Columbus",
+			"cost": 161
+		},
+		{
+			"from": "Indianapolis",
+			"to": "South Bend",
+			"cost": 212
+		},
+		{
+			"from": "Indianapolis",
+			"to": "Cincinnati",
+			"cost": 160
+		},
+		{
+			"from": "Indianapolis",
+			"to": "Nashville",
+			"cost": 405
+		},
+		{
+			"from": "Indianapolis",
+			"to": "Louisville",
+			"cost": 172
+		},
+		{
+			"from": "Indianapolis",
+			"to": "St. Louis",
+			"cost": 371
+		},
+		{
+			"from": "St. Louis",
+			"to": "Chicago",
+			"cost": 422
+		},
+		{
+			"from": "St. Louis",
+			"to": "Indianapolis",
+			"cost": 371
+		},
+		{
+			"from": "St. Louis",
+			"to": "Louisville",
+			"cost": 389
+		},
+		{
+			"from": "St. Louis",
+			"to": "Memphis",
+			"cost": 387
+		},
+		{
+			"from": "St. Louis",
+			"to": "Kansas City",
+			"cost": 387
+		},
+		{
+			"from": "St. Louis",
+			"to": "Iowa City",
+			"cost": 371
+		},
+		{
+			"from": "Memphis",
+			"to": "St. Louis",
+			"cost": 387
+		},
+		{
+			"from": "Memphis",
+			"to": "Louisville",
+			"cost": 515
+		},
+		{
+			"from": "Memphis",
+			"to": "Nashville",
+			"cost": 316
+		},
+		{
+			"from": "Memphis",
+			"to": "New Orleans",
+			"cost": 578
+		},
+		{
+			"from": "Memphis",
+			"to": "Oklahoma City",
+			"cost": 679
+		},
+		{
+			"from": "New Orleans",
+			"to": "Atlanta",
+			"cost": 683
+		},
+		{
+			"from": "New Orleans",
+			"to": "Memphis",
+			"cost": 578
+		},
+		{
+			"from": "New Orleans",
+			"to": "Houston",
+			"cost": 511
+		},
+		{
+			"from": "Houston",
+			"to": "New Orleans",
+			"cost": 511
+		},
+		{
+			"from": "Houston",
+			"to": "Oklahoma City",
+			"cost": 666
+		},
+		{
+			"from": "Houston",
+			"to": "Austin",
+			"cost": 235
+		},
+		{
+			"from": "Austin",
+			"to": "Houston",
+			"cost": 235
+		},
+		{
+			"from": "Austin",
+			"to": "Oklahoma City",
+			"cost": 579
+		},
+		{
+			"from": "Austin",
+			"to": "El Paso",
+			"cost": 846
+		},
+		{
+			"from": "El Paso",
+			"to": "Austin",
+			"cost": 846
+		},
+		{
+			"from": "El Paso",
+			"to": "Albuquerque",
+			"cost": 368
+		},
+		{
+			"from": "El Paso",
+			"to": "Tucson",
+			"cost": 426
+		},
+		{
+			"from": "Tucson",
+			"to": "El Paso",
+			"cost": 426
+		},
+		{
+			"from": "Tucson",
+			"to": "Phoenix",
+			"cost": 174
+		},
+		{
+			"from": "Tucson",
+			"to": "San Diego",
+			"cost": 587
+		},
+		{
+			"from": "San Diego",
+			"to": "Tucson",
+			"cost": 587
+		},
+		{
+			"from": "San Diego",
+			"to": "Phoenix",
+			"cost": 481
+		},
+		{
+			"from": "San Diego",
+			"to": "Los Angeles",
+			"cost": 179
+		},
+		{
+			"from": "Los Angeles",
+			"to": "San Diego",
+			"cost": 179
+		},
+		{
+			"from": "Los Angeles",
+			"to": "Las Vegas",
+			"cost": 368
+		},
+		{
+			"from": "Los Angeles",
+			"to": "San Jose",
+			"cost": 492
+		},
+		{
+			"from": "San Jose",
+			"to": "Los Angeles",
+			"cost": 492
+		},
+		{
+			"from": "San Jose",
+			"to": "San Francisco",
+			"cost": 68
+		},
+		{
+			"from": "San Jose",
+			"to": "Sacramento",
+			"cost": 143
+		},
+		{
+			"from": "San Francisco",
+			"to": "San Jose",
+			"cost": 68
+		},
+		{
+			"from": "San Francisco",
+			"to": "Sacramento",
+			"cost": 121
+		},
+		{
+			"from": "San Francisco",
+			"to": "Portland",
+			"cost": 862
+		},
+		{
+			"from": "Sacramento",
+			"to": "San Jose",
+			"cost": 143
+		},
+		{
+			"from": "Sacramento",
+			"to": "San Francisco",
+			"cost": 121
+		},
+		{
+			"from": "Sacramento",
+			"to": "Portland",
+			"cost": 778
+		},
+		{
+			"from": "Sacramento",
+			"to": "Salt Lake City",
+			"cost": 857
+		},
+		{
+			"from": "Portland",
+			"to": "Sacramento",
+			"cost": 778
+		},
+		{
+			"from": "Portland",
+			"to": "San Francisco",
+			"cost": 862
+		},
+		{
+			"from": "Portland",
+			"to": "Seattle",
+			"cost": 233
+		},
+		{
+			"from": "Seattle",
+			"to": "Portland",
+			"cost": 233
+		},
+		{
+			"from": "Seattle",
+			"to": "Anchorage",
+			"cost": 2309
+		},
+		{
+			"from": "Seattle",
+			"to": "Yellowstone",
+			"cost": 972
+		},
+		{
+			"from": "Anchorage",
+			"to": "Seattle",
+			"cost": 2309
+		},
+		{
+			"from": "Anchorage",
+			"to": "Minneapolis",
+			"cost": 4028
+		},
+		{
+			"from": "Anchorage",
+			"to": "Niagara Falls",
+			"cost": 4942
+		},
+		{
+			"from": "Las Vegas",
+			"to": "Los Angeles",
+			"cost": 368
+		},
+		{
+			"from": "Las Vegas",
+			"to": "Grand Canyon",
+			"cost": 270
+		},
+		{
+			"from": "Salt Lake City",
+			"to": "Sacramento",
+			"cost": 857
+		},
+		{
+			"from": "Salt Lake City",
+			"to": "Grand Canyon",
+			"cost": 524
+		},
+		{
+			"from": "Salt Lake City",
+			"to": "Yellowstone",
+			"cost": 422
+		},
+		{
+			"from": "Salt Lake City",
+			"to": "Denver",
+			"cost": 597
+		},
+		{
+			"from": "Phoenix",
+			"to": "Grand Canyon",
+			"cost": 290
+		},
+		{
+			"from": "Phoenix",
+			"to": "San Diego",
+			"cost": 481
+		},
+		{
+			"from": "Phoenix",
+			"to": "Tucson",
+			"cost": 174
+		},
+		{
+			"from": "Phoenix",
+			"to": "Albuquerque",
+			"cost": 535
+		},
+		{
+			"from": "Denver",
+			"to": "Yellowstone",
+			"cost": 696
+		},
+		{
+			"from": "Denver",
+			"to": "Salt Lake City",
+			"cost": 597
+		},
+		{
+			"from": "Denver",
+			"to": "Albuquerque",
+			"cost": 537
+		},
+		{
+			"from": "Denver",
+			"to": "Kansas City",
+			"cost": 893
+		},
+		{
+			"from": "Albuquerque",
+			"to": "Denver",
+			"cost": 537
+		},
+		{
+			"from": "Albuquerque",
+			"to": "Phoenix",
+			"cost": 535
+		},
+		{
+			"from": "Albuquerque",
+			"to": "El Paso",
+			"cost": 368
+		},
+		{
+			"from": "Albuquerque",
+			"to": "Oklahoma City",
+			"cost": 826
+		},
+		{
+			"from": "Kansas City",
+			"to": "Denver",
+			"cost": 893
+		},
+		{
+			"from": "Kansas City",
+			"to": "Oklahoma City",
+			"cost": 479
+		},
+		{
+			"from": "Kansas City",
+			"to": "St. Louis",
+			"cost": 387
+		},
+		{
+			"from": "Kansas City",
+			"to": "Des Moines",
+			"cost": 290
+		},
+		{
+			"from": "Kansas City",
+			"to": "Omaha",
+			"cost": 265
+		},
+		{
+			"from": "Omaha",
+			"to": "Kansas City",
+			"cost": 265
+		},
+		{
+			"from": "Omaha",
+			"to": "Des Moines",
+			"cost": 203
+		},
+		{
+			"from": "Omaha",
+			"to": "Minneapolis",
+			"cost": 470
+		},
+		{
+			"from": "Omaha",
+			"to": "Mount Rushmore",
+			"cost": 677
+		},
+		{
+			"from": "Des Moines",
+			"to": "Iowa City",
+			"cost": 173
+		},
+		{
+			"from": "Des Moines",
+			"to": "Minneapolis",
+			"cost": 377
+		},
+		{
+			"from": "Des Moines",
+			"to": "Omaha",
+			"cost": 203
+		},
+		{
+			"from": "Des Moines",
+			"to": "Kansas City",
+			"cost": 290
+		},
+		{
+			"from": "Iowa City",
+			"to": "Des Moines",
+			"cost": 173
+		},
+		{
+			"from": "Iowa City",
+			"to": "Chicago",
+			"cost": 324
+		},
+		{
+			"from": "Iowa City",
+			"to": "St. Louis",
+			"cost": 356
+		},
+		{
+			"from": "Minneapolis",
+			"to": "Madison",
+			"cost": 375
+		},
+		{
+			"from": "Minneapolis",
+			"to": "Des Moines",
+			"cost": 377
+		},
+		{
+			"from": "Minneapolis",
+			"to": "Omaha",
+			"cost": 470
+		},
+		{
+			"from": "Minneapolis",
+			"to": "Mount Rushmore",
+			"cost": 818
+		},
+		{
+			"from": "Minneapolis",
+			"to": "Anchorage",
+			"cost": 4028
+		},
+		{
+			"from": "Mount Rushmore",
+			"to": "Minneapolis",
+			"cost": 818
+		},
+		{
+			"from": "Mount Rushmore",
+			"to": "Omaha",
+			"cost": 677
+		},
+		{
+			"from": "Mount Rushmore",
+			"to": "Yellowstone",
+			"cost": 572
+		},
+		{
+			"from": "Yellowstone",
+			"to": "Mount Rushmore",
+			"cost": 572
+		},
+		{
+			"from": "Yellowstone",
+			"to": "Denver",
+			"cost": 696
+		},
+		{
+			"from": "Yellowstone",
+			"to": "Salt Lake City",
+			"cost": 422
+		},
+		{
+			"from": "Yellowstone",
+			"to": "Seattle",
+			"cost": 972
+		},
+		{
+			"from": "Oklahoma City",
+			"to": "Austin",
+			"cost": 579
+		},
+		{
+			"from": "Oklahoma City",
+			"to": "Houston",
+			"cost": 666
+		},
+		{
+			"from": "Oklahoma City",
+			"to": "Memphis",
+			"cost": 679
+		},
+		{
+			"from": "Oklahoma City",
+			"to": "Kansas City",
+			"cost": 479
+		},
+		{
+			"from": "Oklahoma City",
+			"to": "Albuquerque",
+			"cost": 826
+		},
+		{
+			"from": "Grand Canyon",
+			"to": "Phoenix",
+			"cost": 290
+		},
+		{
+			"from": "Grand Canyon",
+			"to": "Las Vegas",
+			"cost": 270
+		},
+		{
+			"from": "Grand Canyon",
+			"to": "Salt Lake City",
+			"cost": 524
+		}
+	]
+}
