@@ -9,7 +9,7 @@ var GraphSearchDjikstra = function()
 
 }
 
-GraphSearchDjikstra.prototype.execute = function(graph,sourceIndex,targetIndex,veh_type)
+GraphSearchDjikstra.prototype.execute = function(graph,sourceIndex,targetIndex)
 {
 	// this is for the vehicel information that is added by the user
 	var veh_types = [];
