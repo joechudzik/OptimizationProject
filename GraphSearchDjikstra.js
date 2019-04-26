@@ -9,23 +9,23 @@ var GraphSearchDjikstra = function()
 
 }
 
-GraphSearchDjikstra.prototype.execute = function(graph,sourceIndex,targetIndex)
+GraphSearchDjikstra.prototype.execute = function(graph,sourceIndex,targetIndex,veh_type)
 {
 	// this is for the vehicel information that is added by the user
-	//var veh_types = [];
-	//var veh_arg_MGP = [];
-	//var mpg = 0;
-	//var total_cost = 0;
-	//veh_types.push('Sedan', 'SUV', 'Crossover', 'Coupe', 'Truck', 'Van');
-	//veh_arg_MGP.push(37,20,30,34,19,20);
-	//for(var i = 0; i < veh_types; i++){
-	//	if(veh_types[i] == veh_type){
-	// 		mpg = veh_arg_MGP[i];
-	// 	}else{
-	// 		console.log("Error: " + veh_type + " is not an option or not available");
-	// 		return;
-	//	}
-	//}
+	var veh_types = [];
+	var veh_arg_MGP = [];
+	var mpg = 0;
+	var total_cost = 0;
+	veh_types.push("Sedan", "SUV", "Crossover", "Coupe", "Truck", "Van");
+	veh_arg_MGP.push(37,20,30,34,19,20);
+	for(var i = 0; i < veh_types; i++){
+		if(veh_types[i].equals(veh_type)){
+			mpg = veh_arg_MGP[i];
+		} else{
+			console.log("Error: " + veh_type + " is not an option or not available");
+			return;
+		}
+	}
 
 	var priorityQueue = new PriorityQueue(function(a,b) {
 		return a.priority - b.priority;

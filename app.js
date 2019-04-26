@@ -21,9 +21,9 @@ var GraphSearchDjikstra = require("./GraphSearchDjikstra.js");
 search = new GraphSearchDjikstra();
 //
 // this line will give the path starting from Nashville (19) to Madison (1)
-searchOut = search.execute(graph,19,1);
+searchOut = search.execute(graph,19,1,"hybrid");
 // this line gives the return path
-searchBack = search.execute(graph,1,19);
+searchBack = search.execute(graph,1,19,"hybrid");
 //
 pathToOut = searchOut.getPathToTarget();
 pathToBack = searchBack.getPathToTarget();
