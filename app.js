@@ -49,8 +49,8 @@ pathToBack.forEach(function(nodeIndex)
 //
 // these will be user entered constraints
 //
-var daysOfTrip = 3;
-var hoursDriving = 8;
+var daysOfTrip = 7;
+var hoursDriving = 14;
 
 var drivingSpeed = 70; // this can either be arbitrary or user can adjust it idk
 answer = search.canIMakeIt(graph, pathToOut, pathToBack, daysOfTrip, hoursDriving, drivingSpeed);
