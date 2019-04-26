@@ -165,8 +165,9 @@
 
                 //var newApp = new App();
 
+                document.getElementById("path_paragraph").innerHTML = "at least the button click works";
+
                 var path_temp = doStuff(start_point, end_point, tripLength, drivingHours);
-                //var path_temp = doTheStuff();
                 //var path_temp = route_setup();
 
                 for(var i=0;i<path_temp.length;++i){
@@ -196,6 +197,8 @@
             });
             debugger
             console(line.getPath());
+
+            document.getElementById("path_paragraph").innerHTML = "THE CODE ACTUALLY RAN!!!";
         }
 
         function downloadUrl(url, callback) {

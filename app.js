@@ -157,14 +157,8 @@ function doStuff(start_point, end_point, daysOfTrip_, hoursDriving_){
 			path.push(back_path[i]);
 		}
 
-		console.log("x_path: "+out_path[out_path.length-1].lat);
-		console.log("x_path: "+back_path[0].lat);
-		console.log(out_path.length);
-		console.log(back_path.length);
-		console.log(path[0].lat);
-
 		//return path;
-	};
+	}
 
 //var newApp = new App();
 doStuff(19, 1, 4, 8);
