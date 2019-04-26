@@ -58,8 +58,8 @@ console.dir(searchFrontier);
 }
 
 GraphSearchDjikstra.prototype.canIMakeIt = function(graph, pathOut, pathBack, daysOfTrip, hoursDriving, speed){
-	var totalCost = 0;
-	var totalCostArray = [];
+	var totalCostOut = 0;
+	var totalCostBack = 0;
 
 	var daysOut = daysOfTrip/2;
 	var hoursDrivingOut = daysOut*hoursDriving;
@@ -68,18 +68,28 @@ GraphSearchDjikstra.prototype.canIMakeIt = function(graph, pathOut, pathBack, da
 	var hoursDrivingBack = daysBack*hoursDriving;
 
 	for (var i = 1; i < pathOut.length; i++){
-		totalCostArray.push(graph.getEdge(pathOut[i-1],pathOut[i]).getEdgeCost());
-		totalCost = totalCost + (graph.getEdge(pathOut[i-1],pathOut[i]).getEdgeCost());
+		totalCostOut = totalCostOut + (graph.getEdge(pathOut[i-1],pathOut[i]).getEdgeCost());
 	}
 
-	var hoursNeededDrivingOut = totalCost/speed;
+	var hoursNeededDrivingOut = totalCostOut/speed;
+	// testing if can make it there in time
 	if (hoursDrivingOut < hoursNeededDrivingOut) {
-		// print "we suggest at least (hoursNeededDrivingOut) hours to get there"
-		return ["False", Math.round(hoursNeededDrivingOut), daysOfTrip];
+		var daysNeeded = (2*totalCostOut)/(speed*hoursDriving);
+		return ["Out", Math.round(hoursNeededDrivingOut), daysOfTrip, Math.ceil(daysNeeded), hoursDriving];
 	}
+	// testing if can make it back in time in case return path is not the same
 	else {
-		// print "you should get there just fine"
-		return ["True", Math.round(hoursDrivingOut)];
+		for (var i = 1; i < pathBack.length; i++){
+			totalCostBack = totalCostBack + (graph.getEdge(pathBack[i-1],pathBack[i]).getEdgeCost());
+		}
+		var hoursNeededDrivingBack = totalCostBack/speed;
+		if (hoursDrivingBack < hoursNeededDrivingBack) {
+			var daysNeeded = (2*totalCostBack)/(speed*hoursDriving);
+			return ["Back", Math.round(hoursNeededDrivingBack), daysOfTrip, Math.ceil(daysNeeded), hoursDriving];
+		}
+		else {
+			return ["Good", Math.round(hoursDrivingOut)];
+		}
 	}
 }
 

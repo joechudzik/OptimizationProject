@@ -6,7 +6,7 @@ var GraphEdge = require("./GraphEdge.js");
 var reader = new GraphFileReader();
 var graph = reader.createFromFile(__dirname + "/data/cities.json",SparseGraph,SimpleNode,GraphEdge);
 
-console.dir(graph);
+//console.dir(graph);
 
 var search;
 var searchOut; // path to destination
@@ -49,17 +49,20 @@ pathToBack.forEach(function(nodeIndex)
 //
 // these will be user entered constraints
 //
-var daysOfTrip = 4;
+var daysOfTrip = 3;
 var hoursDriving = 8;
 
 var drivingSpeed = 70; // this can either be arbitrary or user can adjust it idk
 answer = search.canIMakeIt(graph, pathToOut, pathToBack, daysOfTrip, hoursDriving, drivingSpeed);
 
 console.log("Djikstra\n");
-if (answer[0] == "True") {
+if (answer[0] == "Good") {
 	console.log("Your timing for the trip works. Have fun on the trip!");
 	console.log("You should take the path:"+pathReadable);
 }
 else {
-	console.log("You will not make it with the constraints. We suggest driving at least "+answer[1]+" hours per day if you're trying to make it in "+answer[2]+" days");
+	console.log("You will not make it with the current constraints.");
+	console.log("We suggest \n\t1. Driving at least "+answer[1]+" hours per day if you're trying to make it in "+answer[2]+" days");
+	console.log("\t2. Extending the trip to at least "+answer[3]+" days to drive "+answer[4]+" hours per day");
+	console.log("Using one of the above constraints, your path will be: "+pathReadable);
 }
