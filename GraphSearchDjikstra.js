@@ -78,6 +78,50 @@ console.dir(searchFrontier);
 	});
 }
 
+GraphSearchDjikstra.prototype.doIhaveEnough = function(graph, pathOut, pathBack, veh_type, money){
+
+	var veh_types = [];
+	var money_cost = [];
+	var veh_arg_MGP = [];
+	var mpg = 0;
+	var total_cost = 0;
+	var totalCostOut = 0;
+	var totalCostBack = 0;
+
+	for (var i = 1; i < pathOut.length; i++){
+		totalCostOut = totalCostOut + (graph.getEdge(pathOut[i-1],pathOut[i]).getEdgeCost());
+	}
+
+	for (var i = 1; i < pathBack.length; i++){
+		totalCostBack = totalCostBack + (graph.getEdge(pathBack[i-1],pathBack[i]).getEdgeCost());
+	}
+
+	total_cost = totalCostBack + totalCostOut;
+
+	veh_types.push("Sedan", "SUV", "Crossover", "Coupe", "Truck", "Van");
+	veh_arg_MGP.push(37,20,30,34,19,20);
+	for(var i = 0; i < veh_types.length; i++){
+		if(veh_types[i] == (veh_type)){
+			mpg = veh_arg_MGP[i];
+		}else if (i == veh_types.length){
+			console.warn();("Error: " + veh_type + " is not an option or not available");
+			return;
+		}
+	}
+
+	console.log(total_cost);
+
+	var gas_cost = (total_cost/mpg) * 2.50;
+	gas_cost = Math.round(gas_cost);
+	console.log(gas_cost + " = " + total_cost + " / " + mpg + " * " + "2.50");
+
+	if(money < gas_cost){
+		console.log("Not enough money for trip!");
+	}else{
+		console.log("You have enough money to complete the trip!");
+	}
+}
+
 GraphSearchDjikstra.prototype.canIMakeIt = function(graph, pathOut, pathBack, daysOfTrip, hoursDriving, speed){
 	var totalCostOut = 0;
 	var totalCostBack = 0;
