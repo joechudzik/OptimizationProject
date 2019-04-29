@@ -105,7 +105,7 @@ GraphSearchDjikstra.prototype.doIhaveEnough = function(graph, pathOut, pathBack,
 			mpg = veh_arg_MGP[i];
 		}else if (i == veh_types.length){
 			//console.warn();("Error: " + veh_type + " is not an option or not available");
-			return "veh";
+			return "Vehicle type not available!";
 		}
 	}
 
