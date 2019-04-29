@@ -53,6 +53,59 @@ var city_coords = [
 									[36.0544, -112.1401] // Grand Canyon
 ];
 
+var city_names = ["Milwaukee",
+									"Madison",
+									"Chicago",
+									"South Bend",
+									"Detroit",
+									"Toledo",
+									"Columbus",
+									"Pittsburgh",
+									"Niagara Falls",
+									"Boston",
+									"New York",
+									"Atlantic City",
+									"Baltimore",
+									"Charleston",
+									"Jacksonville",
+									"Orlando",
+									"Miami",
+									"Tampa",
+									"Atlanta",
+									"Nashville",
+									"Louisville",
+									"Cincinnati",
+									"Indianapolis",
+									"St. Louis",
+									"Memphis",
+									"New Orleans",
+									"Houston",
+									"Austin",
+									"El Paso",
+									"Tucson",
+									"San Diego",
+									"Los Angeles",
+									"San Jose",
+									"San Francisco",
+									"Sacramento",
+									"Portland",
+									"Seattle",
+									"Anchorage",
+									"Las Vegas",
+									"Salt Lake City",
+									"Phoenix",
+									"Denver",
+									"Albuquerque",
+									"Kansas City",
+									"Omaha",
+									"Des Moines",
+									"Iowa City",
+									"Minneapolis",
+									"Mount Rushmore",
+									"Yellowstone",
+									"Oklahoma City",
+									"Grand Canyon"];
+
 var _ = require("underscore");
 var GraphFileReader = require("./GraphFileReader.js");
 var SparseGraph = require("./SparseGraph.js");
@@ -63,10 +116,27 @@ var GraphSearchDjikstra = require("./GraphSearchDjikstra.js");
 var reader = new GraphFileReader();
 var graph = reader.createFromFile(__dirname + "/data/cities.json",SparseGraph,SimpleNode,GraphEdge);
 
-function doStuff(start_point, end_point, daysOfTrip_, hoursDriving_){
+function doStuff(start_point_name, end_point_name, daysOfTrip_, hoursDriving_, drivingSpeed_, veh_type_, money_){
 //function doTheStuff() {
 		//var reader = new GraphFileReader();
 		//var graph = reader.createFromFile(__dirname + "/data/cities.json",SparseGraph,SimpleNode,GraphEdge);
+
+		var start_point = null;
+		var end_point = null;
+
+		for (var i = 0; i < city_names.length; i++){
+			if (start_point_name === city_names[i]){
+				start_point = i;
+			}
+			if (end_point_name === city_names[i]){
+				end_point = i;
+			}
+		}
+
+		if ((start_point == null) || (end_point == null)){
+			console.log("Sorry! We don't have one of those cities in our database!");
+		}
+		else {
 
 
 		var search;
@@ -89,7 +159,6 @@ function doStuff(start_point, end_point, daysOfTrip_, hoursDriving_){
 		pathToOut = searchOut.getPathToTarget();
 		pathToBack = searchBack.getPathToTarget();
 		pathReadable = [];
-		console.log("pathToOut: "+pathToOut);
 
 		// creates the readable path for the first half
 		pathToOut.forEach(function(nodeIndex)
@@ -114,13 +183,24 @@ function doStuff(start_point, end_point, daysOfTrip_, hoursDriving_){
 		var daysOfTrip = daysOfTrip_;
 		var hoursDriving = hoursDriving_;
 
-		var drivingSpeed = 70; // this can either be arbitrary or user can adjust it idk
-		answer = search.canIMakeIt(graph, pathToOut, pathToBack, daysOfTrip, hoursDriving, drivingSpeed);
+		//var drivingSpeed = 70; // this can either be arbitrary or user can adjust it idk
+		answer = search.canIMakeIt(graph, pathToOut, pathToBack, daysOfTrip, hoursDriving, drivingSpeed_);
+		var gasAnswer = search.doIhaveEnough(graph, pathToOut, pathToBack, veh_type_, money_);
 
 		console.log("Djikstra\n");
 		if (answer[0] == "Good") {
-			console.log("Your timing for the trip works! Have fun on the trip!");
-			console.log("You should take the path:"+pathReadable);
+			if (gasAnswer === "yes"){
+				console.log("Your timing for the trip "+start_point_name+" to "+end_point_name+" works! Have fun on the trip!");
+				console.log("Days of trip: "+daysOfTrip_+"\nHours driving per day: "+hoursDriving_+"\nDriving speed: "+drivingSpeed_+" mph");
+				console.log("You also have the right amount of money ($"+money_+") and the right vehicle ("+veh_type_+")!");
+				console.log("You should take the path:"+pathReadable);
+			}
+			else if (gasAnswer === "veh"){
+				console.log("Sorry, we don't have that vehicle type available in our database :(");
+			}
+			else if (gasAnswer === "no"){
+				console.log("You don't have enough money for the trip :(");
+			}
 		}
 		else {
 			console.log("You will not make it with the current constraints.");
@@ -159,6 +239,13 @@ function doStuff(start_point, end_point, daysOfTrip_, hoursDriving_){
 
 		//return path;
 	}
+}
 
-//var newApp = new App();
-doStuff(19, 1, 4, 8);
+var start_city = "Chicago";
+var end_city = "Nashville";
+var daysOfTrip = 4;
+var hoursDriving = 8;
+var drivingSpeed = 70;
+var veh_type = "SUV";
+var money = 1000;
+doStuff(start_city, end_city, daysOfTrip, hoursDriving, drivingSpeed, veh_type, money);

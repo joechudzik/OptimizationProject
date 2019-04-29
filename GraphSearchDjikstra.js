@@ -104,21 +104,23 @@ GraphSearchDjikstra.prototype.doIhaveEnough = function(graph, pathOut, pathBack,
 		if(veh_types[i] == (veh_type)){
 			mpg = veh_arg_MGP[i];
 		}else if (i == veh_types.length){
-			console.warn();("Error: " + veh_type + " is not an option or not available");
-			return;
+			//console.warn();("Error: " + veh_type + " is not an option or not available");
+			return "veh";
 		}
 	}
 
-	console.log(total_cost);
+	//console.log(total_cost);
 
 	var gas_cost = (total_cost/mpg) * 2.50;
 	gas_cost = Math.round(gas_cost);
-	console.log(gas_cost + " = " + total_cost + " / " + mpg + " * " + "2.50");
+	//console.log(gas_cost + " = " + total_cost + " / " + mpg + " * " + "2.50");
 
 	if(money < gas_cost){
-		console.log("Not enough money for trip!");
+		//console.log("Not enough money for trip!");
+		return "no";
 	}else{
-		console.log("You have enough money to complete the trip!");
+		//console.log("You have enough money to complete the trip!");
+		return "yes";
 	}
 }
 
