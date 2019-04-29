@@ -248,4 +248,5 @@ var hoursDriving = 8;
 var drivingSpeed = 70;
 var veh_type = "SUV";
 var money = 1000;
+
 doStuff(start_city, end_city, daysOfTrip, hoursDriving, drivingSpeed, veh_type, money);
