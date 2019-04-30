@@ -117,9 +117,6 @@ var reader = new GraphFileReader();
 var graph = reader.createFromFile(__dirname + "/data/cities.json",SparseGraph,SimpleNode,GraphEdge);
 
 function doStuff(start_point_name, end_point_name, daysOfTrip_, hoursDriving_, drivingSpeed_, veh_type_, money_){
-//function doTheStuff() {
-		//var reader = new GraphFileReader();
-		//var graph = reader.createFromFile(__dirname + "/data/cities.json",SparseGraph,SimpleNode,GraphEdge);
 
 		var start_point = null;
 		var end_point = null;
@@ -133,8 +130,11 @@ function doStuff(start_point_name, end_point_name, daysOfTrip_, hoursDriving_, d
 			}
 		}
 
-		if ((start_point == null) || (end_point == null)){
-			console.log("Sorry! We don't have one of those cities in our database!");
+		if (start_point == null){
+			console.log("Sorry! We don't have "+start_point_name+" in our database!");
+		}
+		else if (end_point == null) {
+			console.log("Sorry! We don't have "+end_point_name+" in our database!")
 		}
 		else {
 
@@ -183,11 +183,9 @@ function doStuff(start_point_name, end_point_name, daysOfTrip_, hoursDriving_, d
 		var daysOfTrip = daysOfTrip_;
 		var hoursDriving = hoursDriving_;
 
-		//var drivingSpeed = 70; // this can either be arbitrary or user can adjust it idk
 		answer = search.canIMakeIt(graph, pathToOut, pathToBack, daysOfTrip, hoursDriving, drivingSpeed_);
 		var gasAnswer = search.doIhaveEnough(graph, pathToOut, pathToBack, veh_type_, money_);
 
-		console.log("Djikstra\n");
 		if (answer[0] == "Good") {
 			if (gasAnswer === "yes"){
 				console.log("Your timing for the trip "+start_point_name+" to "+end_point_name+" works! Have fun on the trip!");
@@ -195,7 +193,7 @@ function doStuff(start_point_name, end_point_name, daysOfTrip_, hoursDriving_, d
 				console.log("You also have the right amount of money ($"+money_+") and the right vehicle ("+veh_type_+")!");
 				console.log("You should take the path:"+pathReadable);
 			}
-			else if (gasAnswer === "veh"){
+			else if (gasAnswer === "Vehicle type not available"){
 				console.log("Sorry, we don't have that vehicle type available in our database :(");
 			}
 			else if (gasAnswer === "no"){
@@ -236,8 +234,6 @@ function doStuff(start_point_name, end_point_name, daysOfTrip_, hoursDriving_, d
 		for (var i = 0; i < back_path.length; i++){
 			path.push(back_path[i]);
 		}
-
-		//return path;
 	}
 }
 

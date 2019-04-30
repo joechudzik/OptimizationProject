@@ -11,22 +11,6 @@ var GraphSearchDjikstra = function()
 
 GraphSearchDjikstra.prototype.execute = function(graph,sourceIndex,targetIndex)
 {
-	// this is for the vehicel information that is added by the user
-	var veh_types = [];
-	var veh_arg_MGP = [];
-	var mpg = 0;
-	var total_cost = 0;
-	veh_types.push("Sedan", "SUV", "Crossover", "Coupe", "Truck", "Van");
-	veh_arg_MGP.push(37,20,30,34,19,20);
-	for(var i = 0; i < veh_types; i++){
-		if(veh_types[i].equals(veh_type)){
-			mpg = veh_arg_MGP[i];
-		} else{
-			console.log("Error: " + veh_type + " is not an option or not available");
-			return;
-		}
-	}
-
 	var priorityQueue = new PriorityQueue(function(a,b) {
 		return a.priority - b.priority;
 	},graph.numNodes());
@@ -60,16 +44,10 @@ GraphSearchDjikstra.prototype.execute = function(graph,sourceIndex,targetIndex)
 			{
 				costToNode[edgeFrom.to] = newCost;
 				priorityQueue.changePriority(edgeFrom.to,newCost);
-				//total_cost = total_cost + newCost; // total distance of the trip
 				searchFrontier[edgeFrom.to] = edgeFrom;
 			}
 		})
 	}
-
-	// formula for fuel_cost
-	//var fuel_cost = (total_cost/mpg) + 2.50;
-
-console.dir(searchFrontier);
 	return new DjikstraSearchResult({
 		graph: graph,
 		source: sourceIndex,
@@ -83,7 +61,7 @@ GraphSearchDjikstra.prototype.doIhaveEnough = function(graph, pathOut, pathBack,
 	var veh_types = [];
 	var money_cost = [];
 	var veh_arg_MGP = [];
-	var mpg = 0;
+	var mpg = null;
 	var total_cost = 0;
 	var totalCostOut = 0;
 	var totalCostBack = 0;
@@ -103,24 +81,21 @@ GraphSearchDjikstra.prototype.doIhaveEnough = function(graph, pathOut, pathBack,
 	for(var i = 0; i < veh_types.length; i++){
 		if(veh_types[i] == (veh_type)){
 			mpg = veh_arg_MGP[i];
-		}else if (i == veh_types.length){
-			//console.warn();("Error: " + veh_type + " is not an option or not available");
-			return "Vehicle type not available!";
 		}
 	}
 
-	//console.log(total_cost);
-
 	var gas_cost = (total_cost/mpg) * 2.50;
 	gas_cost = Math.round(gas_cost);
-	//console.log(gas_cost + " = " + total_cost + " / " + mpg + " * " + "2.50");
 
-	if(money < gas_cost){
-		//console.log("Not enough money for trip!");
-		return "no";
-	}else{
-		//console.log("You have enough money to complete the trip!");
-		return "yes";
+	if (mpg == null){
+		return "Vehicle type not available"
+	}
+	else {
+		if(money < gas_cost){
+			return "no";
+		}else{
+			return "yes";
+		}
 	}
 }
 
